@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "dealer")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class DealerModel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,6 +41,7 @@ public class DealerModel implements Serializable {
 	}
 
 	@OneToMany(mappedBy = "dealer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<CarModel> listCar;
 
 	public long getId() {

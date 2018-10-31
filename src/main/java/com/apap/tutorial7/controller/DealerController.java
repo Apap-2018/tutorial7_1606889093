@@ -51,12 +51,6 @@ public class DealerController {
 		return detail;
 	}
 	
-
-	//	@RequestMapping("/")
-//	private String home() {
-//		return "home";
-//	}
-	
 	
 	@PostMapping(value = "/add")
 	private DealerModel addDealerSubmit(@RequestBody DealerModel dealer) {
@@ -94,6 +88,12 @@ public class DealerController {
 	private List<DealerModel> viewAllDealer(Model model){
 		return dealerService.viewAllDealer();
 	}
+	
+	
+//	@RequestMapping("/")
+//	private String home() {
+//		return "home";
+//	}
 	
 	
 //	@RequestMapping(value = "/dealer/add", method = RequestMethod.GET)
